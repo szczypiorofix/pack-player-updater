@@ -1,0 +1,88 @@
+.newFolderIcon .cls-1 {
+  fill: #005baa;
+}
+.newFolderIcon.disabled .cls-1 {
+  fill: #828586;
+}
+
+.newShowIcon .cls-1 {
+  fill: #005baa;
+}
+.newShowIcon.disabled .cls-1 {
+  fill: #828586;
+}
+
+.clearIcon .cls-1 {
+  fill: #005baa;
+}
+.clearIcon.disabled .cls-1 {
+  fill: #828586;
+}
+
+.clearAllIcon .cls-1 {
+  fill: #005baa;
+}
+.clearAllIcon.disabled .cls-1 {
+  fill: #828586;
+}
+
+.editIcon .cls-1 {
+  fill: #005baa;
+}
+.editIcon.disabled .cls-1 {
+  fill: #828586;
+}
+
+.loadIcon .cls-1 {
+  fill: #005baa;
+}
+.loadIcon.disabled .cls-1 {
+  fill: #828586;
+}
+
+.newSlideIcon .cls-1 {
+  fill: #005baa;
+}
+.newSlideIcon.disabled .cls-1 {
+  fill: #828586;
+}
+
+.removeIcon .cls-1 {
+  fill: #005baa;
+}
+.removeIcon.disabled .cls-1 {
+  fill: #828586;
+}
+
+.revertSlidesIcon .cls-1 {
+  fill: #005baa;
+}
+.revertSlidesIcon.disabled .cls-1 {
+  fill: #828586;
+}
+
+.saveIcon .cls-1 {
+  fill: #005baa;
+}
+.saveIcon.disabled .cls-1 {
+  fill: #828586;
+}
+
+.saveAsIcon .cls-1 {
+  fill: #005baa;
+}
+.saveAsIcon.disabled .cls-1 {
+  fill: #828586;
+}
+
+.downloadIcon .cls-1 {
+  fill: #fff;
+}
+
+.okIcon .cls-1 {
+  fill: #fff;
+}
+
+.updateIcon .cls-1 {
+  fill: #fff;
+}

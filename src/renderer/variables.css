@@ -1,0 +1,36 @@
+:root {
+    /* COLORS */
+    --color-page-bg: #fff;
+    --color-menu-left-bg: #ededed;
+    --color-menu-left-p2-bg: #fffbfb;
+    --color-options-bar-bg: #fff;
+    
+    --color-gray: #646464;
+    --color-gray-o: #646464c4;
+    --color-orange: #f56a09;
+    --color-dark-blue: #00509d;
+    --color-dark-blue-80: #00519da1;
+    --color-dark-blue-50: #00519d50;
+    --color-gray-80: #64646469;
+    
+    --color-dark: #111111;
+    --color-white-hover: #fafafa;
+    
+    --color-button: linear-gradient(#308add, #00509d, #034079);
+    --color-button-hover: linear-gradient(#00509d, #00509d, #00509d);
+    --color-green: linear-gradient(rgb(7, 196, 7), rgb(35, 161, 35), rgb(3, 175, 3));
+    --color-red: linear-gradient(rgb(211, 25, 25), rgb(170, 9, 9), rgb(211, 25, 25));
+    --color-green-hover: linear-gradient(rgb(17, 134, 17), rgb(3, 175, 3), rgb(3, 129, 3));
+    --color-red-hover: linear-gradient(rgb(156, 4, 4), rgb(221, 57, 57), rgb(160, 22, 22));
+
+    --color-dashed: #64646463;
+
+    --color-academy-text-colour: rgb(100, 99, 99);
+    --color-academy-primary-colour: rgb(255, 153, 0);
+    --color-product-training-colour: rgb(0, 91, 170);
+    --color-business-training-colour: rgb(153, 51, 153);
+    --color-driver-training-colour: rgb(142, 190, 63);
+
+    --layout-breakpoint-md: 1400px;
+    --layout-breakpoint-sm: 1200px;
+}

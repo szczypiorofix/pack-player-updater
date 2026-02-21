@@ -1,0 +1,114 @@
+{
+    "name": "packplayer-updater",
+    "version": "1.0.0",
+    "author": "szczypiorofix",
+    "description": "PackPlayer Updater",
+    "license": "MIT",
+    "engines": {
+        "node": "14.18.0"
+    },
+    "build": {
+        "productName": "PackPlayer updater",
+        "appId": "com.szczypiorofix.packplayer",
+        "copyright": "Copyright © 2026 ${author}",
+        "asar": true,
+        "compression": "store",
+        "files": [],
+        "directories": {
+            "buildResources": "assets"
+        },
+        "extraFiles": [
+            "config.json",
+            "data",
+            "!data/userdata/**"
+        ],
+        "publish": [
+            {
+                "provider": "github",
+                "owner": "szczypiorofix",
+                "repo": "pack-player-updater"
+            }
+        ],
+        "win": {
+            "target": "zip",
+            "executableName": "PackPlayer",
+            "requestedExecutionLevel": "asInvoker"
+        },
+        "nsis": {
+            "oneClick": false,
+            "perMachine": false,
+            "allowElevation": true,
+            "allowToChangeInstallationDirectory": true
+        }
+    },
+    "scripts": {
+        "start": "electron-webpack dev",
+        "compile": "electron-webpack",
+        "dist": "yarn compile && electron-builder --ia32",
+        "package": "electron-builder -p always",
+        "dist:zip": "yarn compile && electron-builder --win zip --ia32",
+        "dist:inst": "yarn compile && electron-builder --win nsis:ia32 --ia32",
+        "dist:portable": "yarn compile && electron-builder --win portable --ia32",
+        "webpack:help": "electron-webpack --help",
+        "builder:help": "electron-builder --help",
+        "test": "react-scripts test",
+        "format": "prettier . --write"
+    },
+    "dependencies": {
+        "adm-zip": "^0.5.16",
+        "body-parser": "^1.19.0",
+        "crypto-js": "^4.1.1",
+        "electron-devtools-installer": "^3.1.1",
+        "electron-log": "^4.4.1",
+        "electron-updater": "^5.3.0",
+        "errorhandler": "^1.5.1",
+        "express": "^4.17.1",
+        "moment": "^2.29.1",
+        "pdfkit": "^0.12.3",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-svg-loader": "^3.0.3",
+        "response-time": "^2.3.2",
+        "source-map-support": "^0.5.16",
+        "typesafe-actions": "^5.1.0",
+        "uuid": "^8.3.2"
+    },
+    "devDependencies": {
+        "@babel/preset-react": "^7.10.4",
+        "@types/adm-zip": "^0.5.7",
+        "@types/errorhandler": "^1.5.0",
+        "@types/response-time": "^2.3.5",
+        "@types/uuid": "^8.3.3",
+        "@fortawesome/fontawesome-svg-core": "^1.2.35",
+        "@fortawesome/free-brands-svg-icons": "^5.15.3",
+        "@fortawesome/free-regular-svg-icons": "^5.15.3",
+        "@fortawesome/free-solid-svg-icons": "^5.15.3",
+        "@fortawesome/react-fontawesome": "^0.1.14",
+        "@svgr/webpack": "^6.2.1",
+        "@types/cors": "^2.8.12",
+        "@types/crypto-js": "^4.0.2",
+        "@types/electron-devtools-installer": "^2.2.0",
+        "@types/express": "^4.17.13",
+        "@types/node": "12.12.47",
+        "@types/pdfmake": "^0.1.18",
+        "@types/react": "^16.9.48",
+        "@types/react-dom": "^16.9.13",
+        "babel-loader": "^8.2.5",
+        "electron": "8.2.0",
+        "electron-builder": "^22.4.1",
+        "electron-webpack": "^2.8.2",
+        "electron-webpack-ts": "^4.0.1",
+        "file-loader": "^6.2.0",
+        "prettier": "3.7.4",
+        "sass": "^1.94.2",
+        "sass-loader": "^10",
+        "typescript": "^4.0.2",
+        "webpack": "~4.42.1"
+    },
+    "electronWebpack": {
+        "renderer": {
+            "webpackConfig": "webpack.renderer.js"
+        },
+        "whiteListedModules": []
+    }
+}

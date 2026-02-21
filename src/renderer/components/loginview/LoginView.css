@@ -1,0 +1,301 @@
+.login {
+    overflow: hidden;
+    background-color: var(--color-page-bg);
+    padding: 10px 30px 10px 30px;
+    position: absolute;
+    bottom: 46%;
+    right: 50%;
+    width: 380px;
+    height: 442px;
+    transform: translate(50%, 50%);
+    box-shadow: 5px 10px 10px rgba(2, 128, 144, 0.2);
+}
+
+.login img.logo {
+    margin-top: 4px;
+    width: 100%;
+    padding: 0 10px;
+    pointer-events: none;
+    user-select: none;
+}
+
+.login h1 {
+    font-size: 1.8em;
+    color: var(--color-dark-blue);
+    margin-bottom: 5px;
+    user-select: none;
+}
+
+.login p {
+    font-size: 0.8em;
+    color: var(--color-gray);
+    margin-top: 0;
+    margin-bottom: 30px;
+    user-select: none;
+}
+
+.login::before, .login::after {
+    content: '';
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    border-top-left-radius: 38%;
+    border-top-right-radius: 45%;
+    border-bottom-left-radius: 35%;
+    border-bottom-right-radius: 40%;
+    z-index: -1;
+    user-select: none;
+}
+
+.login::before {
+    left: 36%;
+    bottom: -102%;
+    background: linear-gradient(#8ac6ff, #00509d, #01417c);
+    opacity: 0.2;
+    animation: wawes 12s infinite linear;
+}
+
+.login ::after {
+    left: 17%;
+    bottom: -96%;
+    background: linear-gradient(#046bca, #024483, #1560a5);
+    opacity: 0.08;
+    animation: wawes 15s infinite;
+}
+
+.login .languageMenuContainer {
+    position: absolute;
+    width: 96px;
+    top: 374px;
+    right: 29px;
+    z-index: 1001;
+}
+
+.login .appVersion {
+    position: absolute;
+    bottom: 18px;
+    right: 30px;
+    color: var(--color-dark-blue);
+    font-size: 12px;
+}
+
+.login .login-con {
+    position: absolute;
+    max-width: 320px;
+    width: 100%;
+    height: 346px;
+    bottom: 42%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.login .login-con .connStatus {
+    width: 100%;
+    position: absolute;
+    top: 36px;
+    height: 220px;
+}
+
+.login .login-con .connStatus p {
+    padding: 4px 0;
+    margin: 0;
+}
+
+.login .login-con .connStatus .connTitle {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px 0;
+    height: 160px;
+    overflow: auto;
+    line-height: 1.1em;
+}
+
+.login .login-con .connStatus .connTitle button {
+    width: fit-content;
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    outline: none;
+    color: var(--color-product-training-colour);
+}
+
+.login .login-con .connStatus .connTitle span {
+    text-decoration: underline;
+}
+
+.login .login-con .connStatus button.closeOrStart {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    font-family: 'Asap', sans-serif;
+    cursor: pointer;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    max-width: 320px;
+    width: 100px;
+    border: 0;
+    padding: 6px 0;
+    margin-top: 15px;
+    border-radius: 4px;
+    background: var(--color-button);
+}
+
+.login .login-con .connStatus button.closeOrStart:hover {
+    background: var(--color-button-hover);
+}
+
+.login .login-con .connStatus .coursesList {
+    width: 100%;
+    overflow: auto;
+}
+
+.login .login-con .connStatus .coursesList span.warning {
+    color: red;
+    text-decoration: none;
+}
+
+.login .login-con .connStatus .coursesList div, p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #646464;
+}
+
+.login .login-con .connStatus .coursesList div ul {
+    margin: 8px 0;
+    padding-left: 18px;
+}
+
+
+.formDiv .info {
+    height: 76px;
+}
+
+.formDiv .form > input {
+    position: relative;
+    color: var(--color-dark-blue);
+    display: block;
+    border-radius: 5px;
+    font-size: 0.95em;
+    background: rgba(255, 255, 255, 0.95);
+    width: 100%;
+    border: 0;
+    padding: 10px 10px;
+    margin: 15px 0px;
+    border-bottom: 2px solid var(--color-gray);
+    transform: border-bottom 500ms;
+}
+
+.formDiv .form > input:focus {
+    outline: none;
+    padding-bottom: 9px;
+    border-bottom: 3px solid var(--color-dark-blue);
+}
+
+.formDiv .form > input::-webkit-input-placeholder {
+    color: var(--color-dark-blue);
+}
+
+.formDiv .form > input::-webkit-input-placeholder {
+    color: var(--color-gray-o);
+    font-size: 0.9em;
+}
+
+.formDiv .form > input:disabled {
+    pointer-events: none;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    color: grey;
+    background: rgba(242, 242, 242, 0.75);
+}
+
+.formDiv .form > button {
+    font-family: 'Asap', sans-serif;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    max-width: 320px;
+    width: 100%;
+    border: 0;
+    padding: 10px 0;
+    margin-top: 15px;
+    border-radius: 4px;
+    background: var(--color-button);
+}
+
+.formDiv .form > button:hover {
+    background: var(--color-button-hover);
+}
+
+.formDiv .form > button:disabled {
+    color: var(--color-dark);
+    user-select: none;
+    background: rgba(222, 222, 232, 0.85);
+    cursor: not-allowed;
+    box-shadow: 1px 1px 1px 1px rgba(10, 10, 10, 0.1);
+}
+
+.skipButtonDiv {
+    position: absolute;
+    bottom: 6px;
+    left: 0;
+    width: 100%;
+}
+
+.skipButtonDiv button {
+    font-family: 'Asap', sans-serif;
+    cursor: pointer;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    max-width: 320px;
+    width: 90px;
+    border: 0;
+    padding: 6px 0;
+    margin-left: 110px;
+    margin-top: 15px;
+    border-radius: 4px;
+    background: var(--color-button);
+}
+
+.skipButtonDiv button:hover {
+    background: var(--color-button-hover);
+}
+
+.retrievePassword {
+    position: absolute;
+    left: 0;
+    bottom: 26px;
+    width: 100%;
+    height: 10px;
+    margin: 16px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.retrievePassword button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    height: 16px;
+    border-bottom: 1px dotted var(--color-dark);
+    cursor: pointer;
+}
+
+@keyframes wawes {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
