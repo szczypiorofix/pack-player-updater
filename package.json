@@ -1,6 +1,6 @@
 {
     "name": "packplayer-updater",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "szczypiorofix",
     "description": "PackPlayer Updater",
     "license": "MIT",
@@ -49,6 +49,7 @@
         "dist:zip": "yarn compile && electron-builder --win zip --ia32",
         "dist:inst": "yarn compile && electron-builder --win nsis:ia32 --ia32",
         "dist:portable": "yarn compile && electron-builder --win portable --ia32",
+        "release": "yarn compile && electron-builder --win nsis:ia32 --ia32 -p always",
         "webpack:help": "electron-webpack --help",
         "builder:help": "electron-builder --help",
         "test": "react-scripts test",

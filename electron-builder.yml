@@ -1,4 +1,5 @@
 appId: com.szczypiorofix.packplayer
 publish:
     provider: github
-    token: [YOUR GITHUB ACCESS TOKEN]
+    owner: szczypiorofix
+    repo: pack-player-updater

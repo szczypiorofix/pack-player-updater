@@ -2,7 +2,7 @@ import { format as formatUrl } from 'url';
 import path from 'path';
 import fs from 'fs';
 import ElectronLog from 'electron-log';
-import { app, BrowserWindow, nativeImage } from 'electron';
+import { app, BrowserWindow, dialog, nativeImage } from 'electron';
 import { autoUpdater } from 'electron-updater';
 
 import { APP_VERSION, DEBUG_MODE, WABCO_USER_DATA_FILENAME } from '../../shared/constants';
@@ -75,7 +75,7 @@ export default class ElectronWindow {
             this.windowProperties = WINDOW_STANDARD_PROPS;
         }
 
-        this.checkAutoUpdater = false;
+        this.checkAutoUpdater = true;
 
         // There can be only one instance of the app (because of the HTTP server instance)
         if (!app.requestSingleInstanceLock()) {
@@ -105,43 +105,35 @@ export default class ElectronWindow {
             window.setMenu(null);
         });
 
-        // create main BrowserWindow when electron is ready
         app.on('ready', () => {
             this.mainWindow = this.createMainWindow();
             if (this.checkAutoUpdater) {
-                // AutoUpdater
-                autoUpdater
-                    .checkForUpdatesAndNotify()
-                    .then((e) => {
-                        ElectronLog.info('AUTOUPDATER after check and notify: ', e);
-                    })
-                    .catch((err) => {
-                        ElectronLog.error('AUTOUPDATER error: ', err);
+                autoUpdater.on('error', (err) => {
+                    dialog.showErrorBox('Błąd aktualizacji', err == null ? "nieznany błąd" : (err.stack || err).toString());
+                });
+
+                autoUpdater.on('update-available', () => {
+                    dialog.showMessageBox({ message: 'Znalazłem aktualizację! Pobieram w tle...' });
+                });
+
+                autoUpdater.on('update-not-available', () => {
+                    dialog.showMessageBox({ message: 'Brak aktualizacji. Masz najnowszą wersję.' });
+                });
+
+                autoUpdater.on('update-downloaded', () => {
+                    dialog.showMessageBox({
+                    type: 'info',
+                    title: 'Aktualizacja gotowa',
+                    message: 'Pobrano nową wersję. Aplikacja zostanie zrestartowana.',
+                    buttons: ['Zrestartuj']
+                    }).then(() => {
+                    setImmediate(() => autoUpdater.quitAndInstall());
                     });
+                });
+
+                autoUpdater.checkForUpdatesAndNotify();
             }
         });
-
-        if (this.checkAutoUpdater) {
-            autoUpdater.on('checking-for-update', () => {
-                ElectronLog.info('AUTOUPDATER: checking-for-update ...');
-            });
-
-            autoUpdater.on('update-available', (info) => {
-                ElectronLog.info('AUTOUPDATER: update available: ', info);
-            });
-
-            autoUpdater.on('download-progress', (info) => {
-                ElectronLog.info('AUTOUPDATER: update available: ', info);
-            });
-
-            autoUpdater.on('update-not-available', (info) => {
-                ElectronLog.info('AUTOUPDATER: update unavailable: ', info);
-            });
-
-            autoUpdater.on('error', (error, message) => {
-                ElectronLog.error('AUTOUPDATER: error!: ', error, message);
-            });
-        }
     }
 
     private createMainWindow() {
