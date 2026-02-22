@@ -109,25 +109,25 @@ export default class ElectronWindow {
             this.mainWindow = this.createMainWindow();
             if (this.checkAutoUpdater) {
                 autoUpdater.on('error', (err) => {
-                    dialog.showErrorBox('Błąd aktualizacji', err == null ? "nieznany błąd" : (err.stack || err).toString());
+                    dialog.showErrorBox('Update error', err == null ? "Uknown error" : (err.stack || err).toString());
                 });
 
                 autoUpdater.on('update-available', () => {
-                    dialog.showMessageBox({ message: 'Znalazłem aktualizację! Pobieram w tle...' });
+                    dialog.showMessageBox({ message: 'New version available! Downloading in background...' });
                 });
 
                 autoUpdater.on('update-not-available', () => {
-                    dialog.showMessageBox({ message: 'Brak aktualizacji. Masz najnowszą wersję.' });
+                    dialog.showMessageBox({ message: 'No updates available. You have the latest version.' });
                 });
 
                 autoUpdater.on('update-downloaded', () => {
                     dialog.showMessageBox({
                     type: 'info',
-                    title: 'Aktualizacja gotowa',
-                    message: 'Pobrano nową wersję. Aplikacja zostanie zrestartowana.',
-                    buttons: ['Zrestartuj']
+                    title: 'Update ready',
+                    message: 'New version has been downloaded. Application will restart now.',
+                    buttons: ['Restart']
                     }).then(() => {
-                    setImmediate(() => autoUpdater.quitAndInstall());
+                        setImmediate(() => autoUpdater.quitAndInstall(true, true));
                     });
                 });
 

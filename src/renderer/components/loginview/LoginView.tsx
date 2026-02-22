@@ -11,8 +11,10 @@ export const LoginView = (): JSX.Element => {
                 </div>
                 <div className={css.form}>
                     <p>This is the new application...</p>
-                    <p>A new version !!! 1.0.4 !!!</p>
+                    <p>A new version !!! 1.0.6 !!!</p>
                     <p>Update files from a new location !</p>
+                    <p>New location update !!!</p>
+                    <p>Silent updates?</p>
                 </div>
             </div>
         );
