@@ -1,5 +1,4 @@
 appId: com.szczypiorofix.packplayer
 publish:
-    provider: github
-    owner: szczypiorofix
-    repo: pack-player-updater
+    provider: generic
+    url: https://wroblewskipiotr.pl/packplayer_updater/

@@ -1,6 +1,6 @@
 {
     "name": "packplayer-updater",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "author": "szczypiorofix",
     "description": "PackPlayer Updater",
     "license": "MIT",
@@ -24,9 +24,8 @@
         ],
         "publish": [
             {
-                "provider": "github",
-                "owner": "szczypiorofix",
-                "repo": "pack-player-updater"
+                "provider": "generic",
+                "url": "https://wroblewskipiotr.pl/packplayer_updater/"
             }
         ],
         "win": {
@@ -49,7 +48,8 @@
         "dist:zip": "yarn compile && electron-builder --win zip --ia32",
         "dist:inst": "yarn compile && electron-builder --win nsis:ia32 --ia32",
         "dist:portable": "yarn compile && electron-builder --win portable --ia32",
-        "release": "yarn compile && electron-builder --win nsis:ia32 --ia32 -p always",
+        "release:github": "yarn compile && electron-builder --win nsis:ia32 --ia32 -p always",
+        "release": "yarn compile && electron-builder --win nsis:ia32 --ia32",
         "webpack:help": "electron-webpack --help",
         "builder:help": "electron-builder --help",
         "test": "react-scripts test",
